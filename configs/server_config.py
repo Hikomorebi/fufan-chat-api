@@ -12,7 +12,7 @@ DEFAULT_BIND_HOST = "0.0.0.0" if sys.platform != "win32" else "127.0.0.1"
 # api.py server
 API_SERVER = {
     "host": DEFAULT_BIND_HOST,
-    "port": 8000,
+    "port": 8765,
 }
 
 FSCHAT_MODEL_WORKERS = {
@@ -24,11 +24,7 @@ FSCHAT_MODEL_WORKERS = {
     },
 
     # 本地模型 需要配置启动的设备，cpu还是gpu
-    "glm4-9b-chat": {
-        "device": "cuda",
-    },
-
-    "chatglm3-6b": {
+    "qwen2_5-7b-instruct": {
         "device": "cuda",
     },
 

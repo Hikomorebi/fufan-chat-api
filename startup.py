@@ -23,8 +23,6 @@ from server.utils import get_model_worker_config, fschat_controller_address, fsc
 from fastapi import FastAPI
 from server.api_router import create_app
 
-from fastapi import FastAPI
-
 
 def parse_args() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser()

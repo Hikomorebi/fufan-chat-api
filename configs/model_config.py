@@ -7,9 +7,8 @@ MAX_TOKENS = 4096
 # 默认让大模型采用流式输出
 STREAM = True
 
-# 默认启动的模型，如果使用的是glm3-6b，请替换模型名称
-# LLM_MODELS = ["glm4-9b-chat", "zhipu-api"]
-LLM_MODELS = ["chatglm3-6b", "zhipu-api"]
+# 默认启动的模型，如果使用的是其他模型，请替换模型名称
+LLM_MODELS = ["zhipu-api"]
 
 RERANKER_MODEL = "bge-reranker-large"
 RERANKER_MAX_LENGTH = 1024
@@ -29,25 +28,19 @@ SEARCH_ENGINE_TOP_K = 3
 MODEL_PATH = {
     # 这里定义 本机服务器上存储的大模型权重存储路径
     "local_model": {
-        # 默认使用glm4-9b-chat
-        "glm4-9b-chat": "/home/00_rag/model/ZhipuAI/chatglm4-9b-chat",
-
-        "chatglm3-6b": "/home/00_rag/model/ZhipuAI/chatglm3-6b/",
-
+        "qwen2_5-7b-instruct": "/home/hkb/hf_models/Qwen2.5-7B-Instruct",
         # 可扩展其他的开源大模型
 
     },
 
     # 这里定义 本机服务器上存储的Embedding模型权重存储路径
     "embed_model": {
-        "bge-large-zh-v1.5": "/home/00_rag/model/AI-ModelScope/bge-large-zh-v1___5",
-
-        "m3e-base": "/home/00_rag/model/m3e-base",
+        "bge-large-zh-v1.5": "/home/hkb/hf_models/bge-large-zh-v1.5",
         # 可扩展其他的Embedding模型
     },
 
     "reranker": {
-        "bge-reranker-large": "/home/00_rag/model/Xorbits/bge-reranker-large",
+        "bge-reranker-large": "/home/hkb/hf_models/bge-reranker-large",
 
     }
 }
@@ -56,17 +49,9 @@ ONLINE_LLM_MODEL = {
 
     # 智谱清言的在线API服务
     "zhipu-api": {
-        "api_key": "6a612bff6b8e98fd70fb2ca5b91ce6d8.7wrgKDRAnlNw63x8",
+        "api_key": "09dca6001dd34c899267b60fb716085d.XVRP0859K188eyR0",
         "version": "glm-4",
         "provider": "ChatGLMWorker",
-    },
-
-    # OpenAI GPT模型的在线服务
-    "openai-api": {
-        "model_name": "gpt-4",
-        "api_base_url": "https://api.openai.com/v1",
-        "api_key": "",
-        "openai_proxy": "",
     },
 
     # 可扩展其他的模型在线模型
